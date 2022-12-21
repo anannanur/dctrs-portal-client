@@ -13,7 +13,7 @@ const MyAppointments = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://dctrs-portal-server.vercel.app/booking?patient=${user.email}`, {
+            fetch(`http://localhost:5000/booking?patient=${user.email}`, {
                 method: 'GET',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`

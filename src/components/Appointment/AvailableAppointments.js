@@ -11,7 +11,7 @@ const AvailableAppointments = ({ date }) => {
     const [treatment, setTreatment] = useState(null)
     const formattedDate = format(date, 'PP')
     const { isLoading, data:services, refetch } = useQuery(['available',formattedDate], () =>
-     fetch(`https://dctrs-portal-server.vercel.app/available?date=${formattedDate}`)
+     fetch(`http://localhost:5000/available?date=${formattedDate}`)
      .then(res => res.json()
      )
    )
@@ -19,7 +19,7 @@ const AvailableAppointments = ({ date }) => {
     return <Loading/>
    }
     // useEffect(() => {
-    //     fetch(`https://dctrs-portal-server.vercel.app/available?date=${formattedDate}`)
+    //     fetch(`http://localhost:5000/available?date=${formattedDate}`)
     //         .then(res => res.json())
     //         .then(data => setServices(data))
     // }, [formattedDate])

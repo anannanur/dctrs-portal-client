@@ -21,7 +21,7 @@ const BookingModal = ({ refetch, treatment, date, setTreatment }) => {
             phone: event.target.phone.value
         }
 
-        fetch('https://dctrs-portal-server.vercel.app/booking', {
+        fetch('http://localhost:5000/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

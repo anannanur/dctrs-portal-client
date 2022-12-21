@@ -5,7 +5,7 @@ const UserRow = ({ user, refetch, index }) => {
     const { email, role } = user;
     console.log(user)
     const makeAdmin = () => {
-        fetch(`https://dctrs-portal-server.vercel.app/user/admin/${email}`, {
+        fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
